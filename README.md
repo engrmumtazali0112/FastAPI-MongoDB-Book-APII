@@ -16,7 +16,7 @@ A modern RESTful API for managing a collection of books, built with FastAPI and 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-[Features](#features) • [Demo](#live-demo) • [Installation](#installation) • [Usage](#usage) • [API Reference](#api-reference) • [Contributing](#contributing)
+[Features](#features) • [Demo](#http://127.0.0.1:8000/docs#/books/get_books_books__get) • [Installation](#installation) • [Usage](#usage) • [API Reference](#api-reference) • [Contributing](#contributing)
 
 </div>
 

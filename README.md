@@ -90,7 +90,7 @@ uvicorn app.main:app --reload
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/engrmumtazali0112/FastAPI-MongoDB-Book-API.git
+git clone https://github.com/engrmumtazali0112/FastAPI-MongoDB-Book-APII.git
 cd FastAPI-MongoDB-Book-API
 ```
 
@@ -200,7 +200,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Engr Mumtaz Ali - [@engrmumtazali0112](https://github.com/engrmumtazali0112) - engrmumtazali0112@gmail.com
 
-Project Link: [https://github.com/engrmumtazali0112/FastAPI-MongoDB-Book-API](https://github.com/engrmumtazali0112/FastAPI-MongoDB-Book-API)
+Project Link: [https://github.com/engrmumtazali0112/FastAPI-MongoDB-Book-API](https://github.com/engrmumtazali0112/FastAPI-MongoDB-Book-APII)
 
 ---
 

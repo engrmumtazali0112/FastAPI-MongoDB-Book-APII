@@ -22,10 +22,16 @@ async def get_books():
     return [book_serial(book) for book in books]
 
 # Get a single book by ID
-@router.get("/", response_model=list)
-async def get_books():
-    books = list(collection_name.find())
-    return [book_serial(book) for book in books]
+@router.get("/{book_id}", response_model=dict)
+async def get_book(book_id: str):
+    if not ObjectId.is_valid(book_id):
+        raise HTTPException(status_code=400, detail="Invalid ObjectId format")
+    
+    book = collection_name.find_one({"_id": ObjectId(book_id)})
+    if not book:
+        raise HTTPException(status_code=404, detail="Book not found")
+    return book_serial(book)
+
 # Create a new book
 @router.post("/", response_model=dict, status_code=status.HTTP_201_CREATED)
 async def post_book(book: Book):
@@ -37,7 +43,6 @@ async def post_book(book: Book):
 # Update a book by ID
 @router.put("/{book_id}", response_model=dict)
 async def update_book(book_id: str, book: Book):
-    # Validate the book_id to be a valid ObjectId
     if not ObjectId.is_valid(book_id):
         raise HTTPException(status_code=400, detail="Invalid ObjectId format")
     
@@ -53,11 +58,10 @@ async def update_book(book_id: str, book: Book):
 # Delete a book by ID
 @router.delete("/{book_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_book(book_id: str):
-    # Validate the book_id to be a valid ObjectId
     if not ObjectId.is_valid(book_id):
         raise HTTPException(status_code=400, detail="Invalid ObjectId format")
     
     deleted_book = collection_name.find_one_and_delete({"_id": ObjectId(book_id)})
     if not deleted_book:
         raise HTTPException(status_code=404, detail="Book not found")
-    return None  # Return nothing (204 No Content response)
+    return None
